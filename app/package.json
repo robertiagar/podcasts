@@ -1,0 +1,30 @@
+{
+	"name": "podcast",
+	"version": "0.1.0",
+	"main": "main.js",
+	"configurations": [
+		{
+			"name": "Launch Electron App",
+			"type": "node",
+			"program": "app/main.js",
+			"stopOnEntry": false,
+			"args": [],
+			"cwd": ".",
+			"runtimeExecutable": "node_modules/electron-prebuilt/dist/electron.exe",
+			"runtimeArguments": [],
+			"env": {},
+			"sourceMaps": false
+		}
+	],
+	"dependencies": {
+		"jquery": "*",
+		"bootstrap": "*",
+		"font-awesome": "*",
+		"knockout": "*",
+		"http": "*",
+		"url": "*",
+		"feedparser": "*",
+		"util": "*",
+		"request": "*"
+	}
+}
