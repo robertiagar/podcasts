@@ -2,9 +2,10 @@ var FeedParser = require('feedparser');
 var request = require('request');
 var events = {};
 var podcast = {};
-var items = [];
+var items = null;
 
 function getPodcast(feedLink) {
+	items = [];
 	var req = request(feedLink, { timeout: 10000, pool: false });
 	req.setMaxListeners(50);
 	req.setHeader('user-agent', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36');

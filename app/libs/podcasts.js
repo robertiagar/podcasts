@@ -8,7 +8,7 @@ function addPodcast(podcast) {
 	podcastsList.push(podcast);
 	if (events['added'] !== null){
 		console.log('before added');
-		events['added']();
+		events['added'](podcast);
 		console.log('after added');
 	}
 }
