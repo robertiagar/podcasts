@@ -2,20 +2,35 @@
 <html>
 	<head>
 		<title>Podcasts</title>
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" />
 	</head>
 	<body>
-		<div>
-			<button id='click'>click me</button>
-			<input type="text" id="feedurl" />
+		<div class="jumbotron">
+			<div class="container-fluid">
+				<h1>Podcasts</h1>
+				<p>Just add your podcasts and enjoy!</p>
+			</div>
 		</div>
-		<div>
-			<ul id='list'>
-				
-			</ul>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 col-md-2">
+					<ul class="nav nav-pills nav-stacked">
+						<li><a href="">Monstercat Podcast</a></li>
+						<li><a href="">Hospital Records Podcast</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-3 col-md-2">
+					<button id='click'>click me</button>
+					<input type="text" id="feedurl" />
+				</div>
+			</div>
+			<div>
+				<ul id='list'></ul>
+			</div>
 		</div>
 		<script src="scripts/require.js"></script>
 		<script src="scripts/main.js"></script>
-			
 	</body>
 
 </html>
