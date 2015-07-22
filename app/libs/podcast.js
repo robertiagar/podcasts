@@ -37,7 +37,8 @@ function getPodcast(feedLink) {
 				summary: item.summary,
 				permalink: item.permalink,
 				guid: item.guid,
-				enclosure: item.enclosure
+				enclosure: item.enclosures[0],
+				image: item.image
 			};
 			items.push(episode);
 		}

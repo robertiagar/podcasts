@@ -6,31 +6,57 @@
 		<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-theme.min.css" />
 	</head>
 	<body>
+		<div class="modal fade" id="addPodcastModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title">Add Podcast</h4>
+					</div>
+					<div class="modal-body">
+						<textarea class="form-control" id="feedUrl" rows="5"></textarea>
+					</div>
+					<div class="modal-footer">
+						<button class="btn btn-default" data-dismiss="modal">Close</button>
+						<button class="btn btn-primary" id="addButton">Add</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
 		<div class="jumbotron">
 			<div class="container-fluid">
 				<h1>Podcasts</h1>
 				<p>Just add your podcasts and enjoy!</p>
+				<button class="btn btn-primary" data-toggle="modal" data-target="#addPodcastModal">Add Podcast</button>
 			</div>
 		</div>
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-3 col-md-2">
-					<ul class="nav nav-pills nav-stacked">
-						<li><a href="">Monstercat Podcast</a></li>
-						<li><a href="">Hospital Records Podcast</a></li>
-					</ul>
+					<ul class="nav nav-pills nav-stacked" id="podcasts"></ul>
 				</div>
-				<div class="col-sm-3 col-md-2">
-					<button id='click'>click me</button>
-					<input type="text" id="feedurl" />
-				</div>
-			</div>
-			<div>
-				<ul id='list'></ul>
+				<div class="col-sm-3 col-md-8" id="podcast-items"></div>
 			</div>
 		</div>
 		<script src="scripts/require.js"></script>
 		<script src="scripts/main.js"></script>
+		<script>
+			var remote = require('remote');
+			var Menu = remote.require('menu');
+			var MenuItem = remote.require('menu-item');
+			
+			var addPodcast = new MenuItem({
+				click: function(){
+					$('#addPodcastModal').modal('show')
+				},
+				label: "Add Podcast"
+			});
+			
+			Menu.append(addPodcast);
+		</script>
 	</body>
 
 </html>
