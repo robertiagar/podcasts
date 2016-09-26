@@ -38,10 +38,21 @@ function getPodcast(feedLink) {
 				permalink: item.permalink,
 				guid: item.guid,
 				enclosure: item.enclosures[0],
-				image: item.image
+				image: item.image,
+				date: item.date
 			};
 			items.push(episode);
 		}
+		items = items.sort(function(a,b){
+			console.log(a.date);
+			console.log(b.date);
+			if(a.date<b.date)
+				return 1;
+			else if(a.date>b.date)
+				return -1;
+			else
+				return 0;
+		});
 	})
 }
 

@@ -1,5 +1,7 @@
-var app = require('app');
-var BrowserWindow = require('browser-window');
+const electron = require('electron');
+// Module to control application life.
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
 var storage = require("./libs/storage");
 var podcast = require("./libs/podcast");
 
@@ -31,7 +33,7 @@ app.on('ready', function () {
 		mainWindow.maximize();
 	}
 
-	mainWindow.loadUrl('file://' + __dirname + '/index.html');
+	mainWindow.loadURL('file://' + __dirname + '/index.html');
 
 	mainWindow.on('close', function () {
 		var bounds = mainWindow.getBounds();

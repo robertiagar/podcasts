@@ -1,10 +1,10 @@
 var app = {};
 if (process.type == "browser") {
-	app = require('app');
+	app = require('electron').app;
 }
 else {
-	var remote = require('remote');
-	app = remote.require('app');
+	var remote = require('electron').remote;
+	app = remote.require('electron').app;
 }
 
 var fs = require('fs');
